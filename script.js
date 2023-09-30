@@ -37,7 +37,7 @@ function addBookToLibrary(title, author, pages, read) {
 // "Hobbit", "Tolkien", 295, true
 myLibrary.push(new Book("Hobbit", "Tolkien", 295, true));
 myLibrary.push(new Book("Book2", "Someone", 300, false));
-myLibrary.push(new Book("Book3", "Someone", 1000, true));
+myLibrary.push(new Book("Book3", "Someone Else", 1000, true));
 
 const display = document.querySelector('.book-container');
 
@@ -50,15 +50,33 @@ for (let i = 0; i < myLibrary.length; i++) {
     // div.textContent = "hello";
     // div.textContent = myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read;
     const div = document.createElement('div');
+    div.style.border = '1px solid black';
+    div.style.padding = '50px'; 
     display.appendChild(div);
-    div.textContent = myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read;
+
+    const titleDiv = document.createElement('div');
+    div.appendChild(titleDiv);
+    titleDiv.textContent = myLibrary[i].title;
+
+    const authorDiv = document.createElement('div');
+    div.appendChild(authorDiv);
+    authorDiv.textContent = myLibrary[i].author;
+
+    const pagesDiv = document.createElement('div');
+    div.appendChild(pagesDiv);
+    pagesDiv.textContent = myLibrary[i].pages;
+
+    const readDiv = document.createElement('div');
+    div.appendChild(readDiv);
+    readDiv.textContent = myLibrary[i].read;
+
+    // div.textContent = myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read;
 }
 // display.textContent = myLibrary[0].title + myLibrary[0].author + myLibrary[0].pages + myLibrary[0].read;
 
 // for the amount of book objects that exist, make 1 div for each to display
 
 function bookDisplay(myLibrary) {
-    // display.textContent = myLibrary[0];
     // display.textContent = myLibrary[0];
 }
 
