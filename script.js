@@ -83,3 +83,12 @@ function bookDisplay(myLibrary) {
 // const div = document.createElement('div');
 // display.appendChild(div);
 // div.textContent = "Hello";
+
+const button = document.querySelector('#addbook');
+const dialog = document.querySelector('dialog');
+
+button.addEventListener('click', testFunction);
+
+function testFunction() {
+    dialog.showModal();
+}
