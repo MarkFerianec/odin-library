@@ -35,3 +35,6 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 // "Hobbit", "Tolkien", 295, true
+myLibrary.push(new Book("Hobbit", "Tolkien", 295, true));
+myLibrary.push(new Book("Book2", "Someone", 300, false));
+myLibrary.push(new Book("Book3", "Someone", 1000, true));
