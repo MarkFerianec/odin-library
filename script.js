@@ -92,3 +92,43 @@ button.addEventListener('click', testFunction);
 function testFunction() {
     dialog.showModal();
 }
+
+const bookTitleSelector = document.querySelector('#booktitle');
+const bookAuthorSelector = document.querySelector('#bookauthor');
+const bookPagesSelector = document.querySelector('#bookpages');
+const bookReadSelector = document.querySelector('#bookread');
+// let someText = bookTitle.textContent;
+// let someText = '5342432';
+// console.log(someText);
+// console.log(bookTitle.textContent);
+
+submit.addEventListener('click', testFunction2);
+
+function testFunction2() {
+    event.preventDefault()
+    // let bookTitle = bookTitleSelector.value;
+    // let bookAuthor = bookAuthor.value;
+    // alert(bookName); 
+    myLibrary.push(new Book(bookTitleSelector.value, bookAuthorSelector.value, bookPagesSelector.value, bookReadSelector.value));
+    
+    const div = document.createElement('div');
+    display.appendChild(div);
+
+    const titleDiv = document.createElement('div');
+    div.appendChild(titleDiv);
+    titleDiv.textContent = bookTitleSelector.value;
+
+    const authorDiv = document.createElement('div');
+    div.appendChild(authorDiv);
+    authorDiv.textContent = bookAuthorSelector.value;
+
+    const pagesDiv = document.createElement('div');
+    div.appendChild(pagesDiv);
+    pagesDiv.textContent = bookPagesSelector.value;
+
+    const readDiv = document.createElement('div');
+    div.appendChild(readDiv);
+    readDiv.textContent = bookReadSelector.value;
+
+    // myLibrary.push(new Book("Book4", "Someone Else", 10000, true));
+}
