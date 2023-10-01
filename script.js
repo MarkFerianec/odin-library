@@ -52,6 +52,7 @@ for (let i = 0; i < myLibrary.length; i++) {
     const div = document.createElement('div');
     div.style.border = '1px solid black';
     div.style.padding = '50px'; 
+    div.style.margin = '50px';
     display.appendChild(div);
 
     const titleDiv = document.createElement('div');
@@ -112,6 +113,9 @@ function testFunction2() {
     myLibrary.push(new Book(bookTitleSelector.value, bookAuthorSelector.value, bookPagesSelector.value, bookReadSelector.value));
     
     const div = document.createElement('div');
+    div.style.border = '1px solid black';
+    div.style.padding = '50px'; 
+    div.style.margin = '50px';
     display.appendChild(div);
 
     const titleDiv = document.createElement('div');
