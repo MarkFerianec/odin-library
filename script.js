@@ -51,9 +51,12 @@ for (let i = 0; i < myLibrary.length; i++) {
     // div.textContent = myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read;
     const div = document.createElement('div');
     div.style.border = '1px solid black';
-    div.style.padding = '50px'; 
+    div.style.padding = '50px';
     div.style.margin = '50px';
     display.appendChild(div);
+
+    let bookIndex = i;
+    // let bookIndex = myLibrary.length - 1;
 
     const titleDiv = document.createElement('div');
     div.appendChild(titleDiv);
@@ -70,6 +73,20 @@ for (let i = 0; i < myLibrary.length; i++) {
     const readDiv = document.createElement('div');
     div.appendChild(readDiv);
     readDiv.textContent = myLibrary[i].read;
+
+
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove';
+    div.appendChild(removeButton);
+
+    removeButton.addEventListener('click', testFunction3);
+
+    function testFunction3() {
+        // alert('hi');
+        display.removeChild(div);
+        // console.log(dataAttribute);
+        myLibrary.splice(bookIndex, 1);
+    }
 
     // div.textContent = myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read;
 }
@@ -111,10 +128,13 @@ function testFunction2() {
     // let bookAuthor = bookAuthor.value;
     // alert(bookName); 
     myLibrary.push(new Book(bookTitleSelector.value, bookAuthorSelector.value, bookPagesSelector.value, bookReadSelector.value));
-    
+
+    let bookIndex = myLibrary.length - 1;
+    // let dataAttribute = myLibrary.indexOf(); 
+
     const div = document.createElement('div');
     div.style.border = '1px solid black';
-    div.style.padding = '50px'; 
+    div.style.padding = '50px';
     div.style.margin = '50px';
     display.appendChild(div);
 
@@ -134,5 +154,25 @@ function testFunction2() {
     div.appendChild(readDiv);
     readDiv.textContent = bookReadSelector.value;
 
+
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove';
+    div.appendChild(removeButton);
+
+    removeButton.addEventListener('click', testFunction3);
+
+    function testFunction3() {
+        // alert('hi');
+        display.removeChild(div);
+        // console.log(dataAttribute);
+        myLibrary.splice(bookIndex, 1);
+    }
+
     // myLibrary.push(new Book("Book4", "Someone Else", 10000, true));
 }
+
+// removeButton.addEventListener('click', testFunction3);
+
+// function testFunction3() {
+//     alert('hi');
+// }
