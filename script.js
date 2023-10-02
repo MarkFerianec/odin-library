@@ -50,6 +50,8 @@ for (let i = 0; i < myLibrary.length; i++) {
     // div.textContent = "hello";
     // div.textContent = myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read;
     const div = document.createElement('div');
+    div.style.display = 'flex';
+    div.style.flexDirection = "column";
     div.style.border = '1px solid black';
     div.style.padding = '50px';
     div.style.margin = '50px';
@@ -86,6 +88,27 @@ for (let i = 0; i < myLibrary.length; i++) {
         display.removeChild(div);
         // console.log(dataAttribute);
         myLibrary.splice(bookIndex, 1);
+    }
+
+
+    const readButton = document.createElement('button');
+    readButton.textContent = 'Has this book been read?';
+    div.appendChild(readButton);
+
+    readButton.addEventListener('click', testFunction4);
+
+    function testFunction4() {
+        // alert('hi');
+        if (myLibrary[i].read == true) {
+            myLibrary[i].read = false;
+            readDiv.textContent = myLibrary[i].read;
+        }
+        else {
+            myLibrary[i].read = true;
+            readDiv.textContent = myLibrary[i].read;
+        }
+        console.log(myLibrary[i].read);
+
     }
 
     // div.textContent = myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read;
@@ -133,6 +156,8 @@ function testFunction2() {
     // let dataAttribute = myLibrary.indexOf(); 
 
     const div = document.createElement('div');
+    div.style.display = 'flex';
+    div.style.flexDirection = "column";
     div.style.border = '1px solid black';
     div.style.padding = '50px';
     div.style.margin = '50px';
@@ -168,6 +193,25 @@ function testFunction2() {
         myLibrary.splice(bookIndex, 1);
     }
 
+
+    const readButton = document.createElement('button');
+    readButton.textContent = 'Has this book been read?';
+    div.appendChild(readButton);
+
+    readButton.addEventListener('click', testFunction4);
+
+    function testFunction4() {
+        if (myLibrary[bookIndex].read == true) {
+            myLibrary[bookIndex].read = false;
+            readDiv.textContent = myLibrary[bookIndex].read;
+        }
+        else {
+            myLibrary[bookIndex].read = true;
+            readDiv.textContent = myLibrary[bookIndex].read;
+        }
+        console.log(myLibrary[bookIndex].read);
+
+    }
     // myLibrary.push(new Book("Book4", "Someone Else", 10000, true));
 }
 
