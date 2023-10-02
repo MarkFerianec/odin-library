@@ -77,20 +77,6 @@ for (let i = 0; i < myLibrary.length; i++) {
     readDiv.textContent = myLibrary[i].read;
 
 
-    const removeButton = document.createElement('button');
-    removeButton.textContent = 'Remove';
-    div.appendChild(removeButton);
-
-    removeButton.addEventListener('click', testFunction3);
-
-    function testFunction3() {
-        // alert('hi');
-        display.removeChild(div);
-        // console.log(dataAttribute);
-        myLibrary.splice(bookIndex, 1);
-    }
-
-
     const readButton = document.createElement('button');
     readButton.textContent = 'Has this book been read?';
     div.appendChild(readButton);
@@ -109,6 +95,19 @@ for (let i = 0; i < myLibrary.length; i++) {
         }
         console.log(myLibrary[i].read);
 
+    }
+
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove';
+    div.appendChild(removeButton);
+
+    removeButton.addEventListener('click', testFunction3);
+
+    function testFunction3() {
+        // alert('hi');
+        display.removeChild(div);
+        // console.log(dataAttribute);
+        myLibrary.splice(bookIndex, 1);
     }
 
     // div.textContent = myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read;
@@ -180,20 +179,6 @@ function testFunction2() {
     readDiv.textContent = bookReadSelector.value;
 
 
-    const removeButton = document.createElement('button');
-    removeButton.textContent = 'Remove';
-    div.appendChild(removeButton);
-
-    removeButton.addEventListener('click', testFunction3);
-
-    function testFunction3() {
-        // alert('hi');
-        display.removeChild(div);
-        // console.log(dataAttribute);
-        myLibrary.splice(bookIndex, 1);
-    }
-
-
     const readButton = document.createElement('button');
     readButton.textContent = 'Has this book been read?';
     div.appendChild(readButton);
@@ -212,6 +197,21 @@ function testFunction2() {
         console.log(myLibrary[bookIndex].read);
 
     }
+
+    
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove';
+    div.appendChild(removeButton);
+
+    removeButton.addEventListener('click', testFunction3);
+
+    function testFunction3() {
+        // alert('hi');
+        display.removeChild(div);
+        // console.log(dataAttribute);
+        myLibrary.splice(bookIndex, 1);
+    }
+
     // myLibrary.push(new Book("Book4", "Someone Else", 10000, true));
 }
 
