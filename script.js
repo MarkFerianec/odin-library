@@ -199,11 +199,13 @@ function testFunction2() {
     function testFunction4() {
         if (myLibrary[bookIndex].read == true) {
             myLibrary[bookIndex].read = false;
-            readDiv.textContent = myLibrary[bookIndex].read;
+            // readDiv.textContent = myLibrary[bookIndex].read;
+            readDiv.textContent = "This book has not been read";
         }
         else {
             myLibrary[bookIndex].read = true;
-            readDiv.textContent = myLibrary[bookIndex].read;
+            // readDiv.textContent = myLibrary[bookIndex].read;
+            readDiv.textContent = "This book has been read";
         }
         console.log(myLibrary[bookIndex].read);
 
