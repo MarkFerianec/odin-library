@@ -74,7 +74,15 @@ for (let i = 0; i < myLibrary.length; i++) {
 
     const readDiv = document.createElement('div');
     div.appendChild(readDiv);
-    readDiv.textContent = myLibrary[i].read;
+    if (myLibrary[i].read == true) {
+        // readDiv.textContent = myLibrary[i].read;
+        readDiv.textContent = "This book has been read";
+    }
+    else {
+        // readDiv.textContent = myLibrary[i].read;
+        readDiv.textContent = "This book has not been read";
+    }
+    // readDiv.textContent = myLibrary[i].read;
 
 
     const readButton = document.createElement('button');
@@ -87,15 +95,18 @@ for (let i = 0; i < myLibrary.length; i++) {
         // alert('hi');
         if (myLibrary[i].read == true) {
             myLibrary[i].read = false;
-            readDiv.textContent = myLibrary[i].read;
+            // readDiv.textContent = myLibrary[i].read;
+            readDiv.textContent = "This book has not been read";
         }
-        else {
+        else if (myLibrary[i].read == false) {
             myLibrary[i].read = true;
-            readDiv.textContent = myLibrary[i].read;
+            // readDiv.textContent = myLibrary[i].read;
+            readDiv.textContent = "This book has been read";
         }
         console.log(myLibrary[i].read);
 
     }
+
 
     const removeButton = document.createElement('button');
     removeButton.textContent = 'Remove';
