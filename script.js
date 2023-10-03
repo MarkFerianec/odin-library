@@ -89,9 +89,9 @@ for (let i = 0; i < myLibrary.length; i++) {
     readButton.textContent = 'Has this book been read?';
     div.appendChild(readButton);
 
-    readButton.addEventListener('click', testFunction4);
+    readButton.addEventListener('click', toggleReadStatus);
 
-    function testFunction4() {
+    function toggleReadStatus() {
         // alert('hi');
         if (myLibrary[i].read == true) {
             myLibrary[i].read = false;
@@ -112,9 +112,9 @@ for (let i = 0; i < myLibrary.length; i++) {
     removeButton.textContent = 'Remove';
     div.appendChild(removeButton);
 
-    removeButton.addEventListener('click', testFunction3);
+    removeButton.addEventListener('click', removeBook);
 
-    function testFunction3() {
+    function removeBook() {
         // alert('hi');
         display.removeChild(div);
         // console.log(dataAttribute);
@@ -127,20 +127,20 @@ for (let i = 0; i < myLibrary.length; i++) {
 
 // for the amount of book objects that exist, make 1 div for each to display
 
-function bookDisplay(myLibrary) {
+// function bookDisplay(myLibrary) {
     // display.textContent = myLibrary[0];
-}
+// }
 
 // const div = document.createElement('div');
 // display.appendChild(div);
 // div.textContent = "Hello";
 
-const button = document.querySelector('#addbook');
+const addBookButton = document.querySelector('#addbook');
 const dialog = document.querySelector('dialog');
 
-button.addEventListener('click', testFunction);
+addBookButton.addEventListener('click', displayModal);
 
-function testFunction() {
+function displayModal() {
     dialog.showModal();
 }
 
@@ -153,9 +153,9 @@ const bookReadSelector = document.querySelector('#bookread');
 // console.log(someText);
 // console.log(bookTitle.textContent);
 
-submit.addEventListener('click', testFunction2);
+submit.addEventListener('click', submitForm);
 
-function testFunction2() {
+function submitForm() {
     event.preventDefault()
     // let bookTitle = bookTitleSelector.value;
     // let bookAuthor = bookAuthor.value;
@@ -201,9 +201,9 @@ function testFunction2() {
     readButton.textContent = 'Has this book been read?';
     div.appendChild(readButton);
 
-    readButton.addEventListener('click', testFunction4);
+    readButton.addEventListener('click', toggleReadStatus);
 
-    function testFunction4() {
+    function toggleReadStatus() {
         if (myLibrary[bookIndex].read == true) {
             myLibrary[bookIndex].read = false;
             // readDiv.textContent = myLibrary[bookIndex].read;
@@ -223,9 +223,9 @@ function testFunction2() {
     removeButton.textContent = 'Remove';
     div.appendChild(removeButton);
 
-    removeButton.addEventListener('click', testFunction3);
+    removeButton.addEventListener('click', removeBook);
 
-    function testFunction3() {
+    function removeBook() {
         // alert('hi');
         display.removeChild(div);
         // console.log(dataAttribute);
