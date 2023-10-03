@@ -160,7 +160,7 @@ function testFunction2() {
     // let bookTitle = bookTitleSelector.value;
     // let bookAuthor = bookAuthor.value;
     // alert(bookName); 
-    myLibrary.push(new Book(bookTitleSelector.value, bookAuthorSelector.value, bookPagesSelector.value, bookReadSelector.value));
+    myLibrary.push(new Book(bookTitleSelector.value, bookAuthorSelector.value, bookPagesSelector.value, bookReadSelector.checked));
 
     let bookIndex = myLibrary.length - 1;
     // let dataAttribute = myLibrary.indexOf(); 
@@ -187,8 +187,15 @@ function testFunction2() {
 
     const readDiv = document.createElement('div');
     div.appendChild(readDiv);
-    readDiv.textContent = bookReadSelector.value;
+    if (bookReadSelector.checked == true) {
+        readDiv.textContent = "This book has been read";
+    }
+    else {
+        readDiv.textContent = "This book has not been read";
+    }
+    // readDiv.textContent = bookReadSelector.checked;
 
+    // document.getElementById("bookread").checked 
 
     const readButton = document.createElement('button');
     readButton.textContent = 'Has this book been read?';
@@ -211,7 +218,7 @@ function testFunction2() {
 
     }
 
-    
+
     const removeButton = document.createElement('button');
     removeButton.textContent = 'Remove';
     div.appendChild(removeButton);
