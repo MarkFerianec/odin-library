@@ -232,7 +232,11 @@ function submitForm() {
         myLibrary.splice(bookIndex, 1);
     }
 
-    // myLibrary.push(new Book("Book4", "Someone Else", 10000, true));
+    bookTitleSelector.value = '';
+    bookAuthorSelector.value = '';
+    bookPagesSelector.value = '';
+    bookReadSelector.checked = false;
+    dialog.close();
 }
 
 // removeButton.addEventListener('click', testFunction3);
