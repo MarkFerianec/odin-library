@@ -128,7 +128,7 @@ for (let i = 0; i < myLibrary.length; i++) {
 // for the amount of book objects that exist, make 1 div for each to display
 
 // function bookDisplay(myLibrary) {
-    // display.textContent = myLibrary[0];
+// display.textContent = myLibrary[0];
 // }
 
 // const div = document.createElement('div');
@@ -137,11 +137,22 @@ for (let i = 0; i < myLibrary.length; i++) {
 
 const addBookButton = document.querySelector('#addbook');
 const dialog = document.querySelector('dialog');
+const closeDialogButton = document.querySelector('#close-dialog-button');
 
 addBookButton.addEventListener('click', displayModal);
 
 function displayModal() {
     dialog.showModal();
+}
+
+closeDialogButton.addEventListener('click', closeModal);
+
+function closeModal() {
+    bookTitleSelector.value = '';
+    bookAuthorSelector.value = '';
+    bookPagesSelector.value = '';
+    bookReadSelector.checked = false;
+    dialog.close();
 }
 
 const bookTitleSelector = document.querySelector('#booktitle');
@@ -239,8 +250,3 @@ function submitForm() {
     dialog.close();
 }
 
-// removeButton.addEventListener('click', testFunction3);
-
-// function testFunction3() {
-//     alert('hi');
-// }
