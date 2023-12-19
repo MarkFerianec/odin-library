@@ -193,8 +193,8 @@ function submitForm() {
   div.style.display = 'flex';
   div.style.flexDirection = 'column';
   div.style.border = '1px solid black';
-  div.style.padding = '50px';
-  div.style.margin = '50px';
+  div.style.padding = '4rem';
+  div.style.margin = '4rem';
   display.appendChild(div);
   div.dataset.bookIndex = myLibrary.length - 1;
 
