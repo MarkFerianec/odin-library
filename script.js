@@ -16,110 +16,127 @@ class Book {
       bookReadOrNot = 'not read yet';
     }
     return title + ' by ' + author + ', ' + pages + ' pages, ' + bookReadOrNot;
+    // console.log(title + ' by ' + author + ', ' + pages + ' pages, ' + bookReadOrNot);
   }
 }
 
-function addBookToLibrary(title, author, pages, read) {
-  // add a function to the script (not the constructor) that can take user’s input and store the new book objects into an array.
-  // read user input
-  // enter book name, author, pages and if read or not
-  let bookTitle = title;
-  let bookAuthor = author;
-  let bookPages = pages;
-  let bookRead = read;
-  //make bookObject
+// function addBookToLibrary(title, author, pages, read) {
+//   // add a function to the script (not the constructor) that can take user’s input and store the new book objects into an array.
+//   // read user input
+//   // enter book name, author, pages and if read or not
+//   let bookTitle = title;
+//   let bookAuthor = author;
+//   let bookPages = pages;
+//   let bookRead = read;
 
-  // myLibrary.push(bookObject)
-  myLibrary.push(new Book(bookTitle, bookAuthor, bookPages, bookRead));
-}
+//   myLibrary.push(new Book(bookTitle, bookAuthor, bookPages, bookRead));
+// }
 
-// myLibrary.push(new Book('Hobbit', 'Tolkien', 295, true));
-// myLibrary.push(new Book('Book2', 'Someone', 300, false));
-// myLibrary.push(new Book('Book3', 'Someone Else', 1000, true));
-
-addBookToLibrary('Hobbit', 'Tolkien', 295, true);
-addBookToLibrary('Book2', 'Someone', 300, false);
-addBookToLibrary('Book3', 'Someone Else', 1000, true);
+// Some default books
+// addBookToLibrary('Hobbit', 'Tolkien', 295, true);
+// addBookToLibrary('Book2', 'Someone', 300, false);
+// addBookToLibrary('Book3', 'Someone Else', 1000, true);
 
 const display = document.querySelector('.book-container');
 
-for (let i = 0; i < myLibrary.length; i++) {
-  // console.log(i);
-  // console.log(myLibrary[i]);
-  // console.log(myLibrary[i].title);
-  // console.log(myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read);
-  // const div = document.createElement('div');
-  // div.textContent = "hello";
-  // div.textContent = myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read;
-  const div = document.createElement('div');
-  div.style.display = 'flex';
-  div.style.flexDirection = 'column';
-  div.style.border = '1px solid black';
-  div.style.padding = '50px';
-  div.style.margin = '50px';
-  display.appendChild(div);
+// This was initially here to display default books
+// for (let i = 0; i < myLibrary.length; i++) {
+//   const div = document.createElement('div');
+//   div.style.display = 'flex';
+//   div.style.flexDirection = 'column';
+//   div.style.border = '1px solid black';
+//   div.style.padding = '50px';
+//   div.style.margin = '50px';
+//   // this is new
+//   div.dataset.bookIndex = i;
 
-  let bookIndex = i;
-  // let bookIndex = myLibrary.length - 1;
+//   console.log(div.dataset);
+//   console.log(div.dataset.bookIndex);
 
-  const titleDiv = document.createElement('div');
-  div.appendChild(titleDiv);
-  titleDiv.textContent = myLibrary[i].title;
+//   display.appendChild(div);
 
-  const authorDiv = document.createElement('div');
-  div.appendChild(authorDiv);
-  authorDiv.textContent = myLibrary[i].author;
+//   //   let bookIndex = i;
+//   // let bookIndex = myLibrary.length - 1;
 
-  const pagesDiv = document.createElement('div');
-  div.appendChild(pagesDiv);
-  pagesDiv.textContent = myLibrary[i].pages;
+//   const titleDiv = document.createElement('div');
+//   div.appendChild(titleDiv);
+//   titleDiv.textContent = myLibrary[i].title;
 
-  const readDiv = document.createElement('div');
-  div.appendChild(readDiv);
-  if (myLibrary[i].read == true) {
-    // readDiv.textContent = myLibrary[i].read;
-    readDiv.textContent = 'This book has been read';
-  } else {
-    // readDiv.textContent = myLibrary[i].read;
-    readDiv.textContent = 'This book has not been read';
-  }
-  // readDiv.textContent = myLibrary[i].read;
+//   const authorDiv = document.createElement('div');
+//   div.appendChild(authorDiv);
+//   authorDiv.textContent = myLibrary[i].author;
 
-  const readButton = document.createElement('button');
-  readButton.textContent = 'Has this book been read?';
-  div.appendChild(readButton);
+//   const pagesDiv = document.createElement('div');
+//   div.appendChild(pagesDiv);
+//   pagesDiv.textContent = myLibrary[i].pages;
 
-  readButton.addEventListener('click', toggleReadStatus);
+//   const readDiv = document.createElement('div');
+//   div.appendChild(readDiv);
+//   if (myLibrary[i].read == true) {
+//     // readDiv.textContent = myLibrary[i].read;
+//     readDiv.textContent = 'This book has been read';
+//   } else {
+//     // readDiv.textContent = myLibrary[i].read;
+//     readDiv.textContent = 'This book has not been read';
+//   }
+//   // readDiv.textContent = myLibrary[i].read;
 
-  function toggleReadStatus() {
-    // alert('hi');
-    if (myLibrary[i].read == true) {
-      myLibrary[i].read = false;
-      // readDiv.textContent = myLibrary[i].read;
-      readDiv.textContent = 'This book has not been read';
-    } else if (myLibrary[i].read == false) {
-      myLibrary[i].read = true;
-      // readDiv.textContent = myLibrary[i].read;
-      readDiv.textContent = 'This book has been read';
-    }
-    console.log(myLibrary[i].read);
-  }
+//   const readButton = document.createElement('button');
+//   readButton.textContent = 'Has this book been read?';
+//   div.appendChild(readButton);
 
-  const removeButton = document.createElement('button');
-  removeButton.textContent = 'Remove';
-  div.appendChild(removeButton);
+//   readButton.addEventListener('click', toggleReadStatus);
 
-  removeButton.addEventListener('click', removeBook);
+//   function toggleReadStatus() {
+//     if (myLibrary[i].read == true) {
+//       myLibrary[i].read = false;
+//       // readDiv.textContent = myLibrary[i].read;
+//       readDiv.textContent = 'This book has not been read';
+//     } else if (myLibrary[i].read == false) {
+//       myLibrary[i].read = true;
+//       // readDiv.textContent = myLibrary[i].read;
+//       readDiv.textContent = 'This book has been read';
+//     }
+//     console.log(myLibrary[i].read);
+//   }
 
-  function removeBook() {
-    // alert('hi');
-    display.removeChild(div);
-    // console.log(dataAttribute);
-    myLibrary.splice(bookIndex, 1);
-  }
+//   const removeButton = document.createElement('button');
+//   removeButton.textContent = 'Remove';
+//   div.appendChild(removeButton);
 
-  // div.textContent = myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read;
-}
+//   removeButton.addEventListener('click', removeBook);
+
+//   function removeBook() {
+//     display.removeChild(div);
+//     // myLibrary.splice(bookIndex, 1);
+
+//     // if () {} // I might need an if statement to do different stuff when there is a few elements left in array
+
+//     // myLibrary.splice(div.dataset.bookIndex, 1);
+
+//     // myLibrary = myLibrary.filter(
+//     //   (element) => element !== div.dataset.bookIndex
+//     // );
+
+//     // myLibrary = myLibrary.filter((i) => {
+//     //   return i !== div.dataset.bookIndex;
+//     // });
+
+//     // console.log(div.dataset.bookIndex);
+//     // console.log(typeof div.dataset.bookIndex);
+//     // console.log(typeof Number(div.dataset.bookIndex));
+
+//     // This does not work because the array shifts around objects
+//     if (myLibrary.length == 1) {
+//       myLibrary.pop();
+//     } else {
+//       myLibrary.splice(div.dataset.bookIndex, 1);
+//       console.log(myLibrary);
+//     }
+//   }
+
+//   // div.textContent = myLibrary[i].title + myLibrary[i].author + myLibrary[i].pages + myLibrary[i].read;
+// }
 // display.textContent = myLibrary[0].title + myLibrary[0].author + myLibrary[0].pages + myLibrary[0].read;
 
 // for the amount of book objects that exist, make 1 div for each to display
@@ -156,10 +173,6 @@ const bookTitleSelector = document.querySelector('#booktitle');
 const bookAuthorSelector = document.querySelector('#bookauthor');
 const bookPagesSelector = document.querySelector('#bookpages');
 const bookReadSelector = document.querySelector('#bookread');
-// let someText = bookTitle.textContent;
-// let someText = '5342432';
-// console.log(someText);
-// console.log(bookTitle.textContent);
 
 submit.addEventListener('click', submitForm);
 
@@ -167,7 +180,6 @@ function submitForm() {
   event.preventDefault();
   // let bookTitle = bookTitleSelector.value;
   // let bookAuthor = bookAuthor.value;
-  // alert(bookName);
   myLibrary.push(
     new Book(
       bookTitleSelector.value,
@@ -176,10 +188,7 @@ function submitForm() {
       bookReadSelector.checked
     )
   );
-
-  let bookIndex = myLibrary.length - 1;
-  // let dataAttribute = myLibrary.indexOf();
-
+  // let bookIndex = myLibrary.length - 1; 
   const div = document.createElement('div');
   div.style.display = 'flex';
   div.style.flexDirection = 'column';
@@ -187,6 +196,7 @@ function submitForm() {
   div.style.padding = '50px';
   div.style.margin = '50px';
   display.appendChild(div);
+  div.dataset.bookIndex = myLibrary.length - 1;
 
   const titleDiv = document.createElement('div');
   div.appendChild(titleDiv);
@@ -237,10 +247,11 @@ function submitForm() {
   removeButton.addEventListener('click', removeBook);
 
   function removeBook() {
-    // alert('hi');
     display.removeChild(div);
-    // console.log(dataAttribute);
-    myLibrary.splice(bookIndex, 1);
+    // myLibrary.splice(bookIndex, 1);
+    // console.log(div.dataset.bookIndex);
+    // myLibrary.splice(div.dataset.bookIndex, 1);
+    delete myLibrary[div.dataset.bookIndex];
   }
 
   bookTitleSelector.value = '';
