@@ -178,8 +178,7 @@ submit.addEventListener('click', submitForm);
 
 function submitForm() {
   event.preventDefault();
-  // let bookTitle = bookTitleSelector.value;
-  // let bookAuthor = bookAuthor.value;
+
   myLibrary.push(
     new Book(
       bookTitleSelector.value,
@@ -188,7 +187,7 @@ function submitForm() {
       bookReadSelector.checked
     )
   );
-  // let bookIndex = myLibrary.length - 1; 
+
   const div = document.createElement('div');
   div.style.display = 'flex';
   div.style.flexDirection = 'column';
@@ -217,9 +216,6 @@ function submitForm() {
   } else {
     readDiv.textContent = 'This book has not been read';
   }
-  // readDiv.textContent = bookReadSelector.checked;
-
-  // document.getElementById("bookread").checked
 
   const readButton = document.createElement('button');
   readButton.textContent = 'Has this book been read?';
@@ -228,16 +224,14 @@ function submitForm() {
   readButton.addEventListener('click', toggleReadStatus);
 
   function toggleReadStatus() {
-    if (myLibrary[bookIndex].read == true) {
-      myLibrary[bookIndex].read = false;
-      // readDiv.textContent = myLibrary[bookIndex].read;
+    if (myLibrary[div.dataset.bookIndex].read == true) {
+      myLibrary[div.dataset.bookIndex].read = false;
       readDiv.textContent = 'This book has not been read';
     } else {
-      myLibrary[bookIndex].read = true;
-      // readDiv.textContent = myLibrary[bookIndex].read;
+      myLibrary[div.dataset.bookIndex].read = true;
       readDiv.textContent = 'This book has been read';
     }
-    console.log(myLibrary[bookIndex].read);
+    // console.log(myLibrary[div.dataset.bookIndex].read);
   }
 
   const removeButton = document.createElement('button');
